@@ -1,0 +1,29 @@
+.passion1 {
+  color: if true, #1b18d4, #1d1ae2; }
+
+.passion2 {
+  color: if false, #1b18d4, #2724e6; }
+
+.passion3 {
+  color: if false, #1b18d4, #3532e8; }
+
+.passion4 {
+  color: if false, #1b18d4, #4340e9; }
+
+.passion5 {
+  color: if false, #1b18d4, #504eeb; }
+
+.passion6 {
+  color: if false, #1b18d4, #5e5bec; }
+
+.passion7 {
+  color: if false, #1b18d4, #6b69ee; }
+
+.passion8 {
+  color: if false, #1b18d4, #7977f0; }
+
+.passion9 {
+  color: if false, #1b18d4, #8685f1; }
+
+.passion10 {
+  color: if false, #1b18d4, #9492f3; }

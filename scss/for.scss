@@ -1,0 +1,119 @@
+// @for $i from 1 to 10 {
+//     .order {
+//         order: $i;
+//     }
+// }
+
+// @for $i from 1 through 10 {
+//     .order {
+//         order: $i;
+//     }
+// }
+
+// @for $i from 1 through 10 {
+//     .col-#{$i} {
+//         width: 100% / $i;
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     .col-2 {
+//         width: 100% / $i;
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     .mt-#{$i}rem {
+//         margin-top: #{$i}rem;
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+
+//     $value: .5 * $i;
+//     .mt-half-#{$i} {
+//         margin-top: #{$value}rem;
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     $value: .5 * $i;
+//     $has-decimal: floor($value) !=$value;
+//     .mt-half-#{$has-decimal} {
+//         margin-top: #{$value}rem;
+
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     $value: .5 * $i;
+//     $has-decimal: floor($value) !=$value;
+//     $class-name: if($has-decimal, #{$value - .5}pt5, $value);
+//     .mt-#{$class-name} {
+//         margin-top: #{$value}rem;
+
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     $value: .5 * $i;
+    
+//     [class~="mt-#{$value}"]{
+//         margin-top: #{$value}rem;
+
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     $color: red;
+//     $color-value: lighten($color, 3% * $i);
+
+//     .#{$color}#{$i} {
+//         color: $color-value;
+//     }
+// }
+
+
+// @for $i from 1 through 10 {
+//     $color: red;
+//     $color-value: if ($i == 1, $color, lighten($color, 3% * $i));
+
+//     .#{$color}#{$i} {
+//         color: $color-value;
+//     }
+// }
+
+
+/* //this works for only one color
+@for $i from 1 through 10 {
+    $color: #1b18d4;
+    $color-value: if ($i == 1, $color, lighten($color, 3% * $i));
+
+    .passion#{$i} {
+        color: $color-value;
+    }
+} */
+
+
+
+//if we use mixin, we can make classes for multiple colors
+@mixin light-color-class($color, $color-name, $i) {
+    $color-value: if ($i == 1, $color, lighten($color, 3% * $i));
+    
+    .#{$i} { 
+        color: $color-value;
+    }
+    
+}
+@for $i from 1 through 10 {
+    @include light-color-class(#ee34dd, passion, $i);
+    @include light-color-class(rebeccapurple, empathy, $i);
+    @include light-color-class(blue, cool-kids, $i);
+}
